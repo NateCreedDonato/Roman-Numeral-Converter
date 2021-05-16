@@ -1,19 +1,12 @@
 function convertToRoman(num) {
-  var romans = [
-      
-      ["I", "V"], 
-      ["X", "L"], 
-      ["C", "D"], 
-      ["M"]
-    ],
+  var romans = [["I", "V"], ["X", "L"], ["C", "D"], ["M"]],
     digits = num
       .toString()
       .split("")
       .reverse()
-      .map(function(item, index) {
+      .map(function (item, index) {
         return parseInt(item);
       }),
-
     numeral = "";
   for (var i = 0; i < digits.length; i++) {
     numeral = romans[i][0].repeat(digits[i]) + numeral;
